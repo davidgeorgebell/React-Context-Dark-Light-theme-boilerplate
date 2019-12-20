@@ -1,50 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from './contexts/ThemeContext';
 
-import './App.css';
+import Header from './components/Header';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(getInitialMode);
-
-  useEffect(() => {
-    localStorage.setItem('dark', JSON.stringify(darkMode));
-    getPrefColourScheme();
-  }, [darkMode]);
-
-  function getInitialMode() {
-    const isReturningUser = 'dark' in localStorage;
-    const savedMode = JSON.parse(localStorage.getItem('dark'));
-    const userPrefersDark = getPrefColourScheme();
-    // if mode was saved -> dark / light
-    if (isReturningUser) {
-      return savedMode;
-      // if preferred colour scheme is dark -> dark
-    } else if (userPrefersDark) {
-      return true;
-      // otherwise -> light
-    } else {
-      return false;
-    }
-  }
-
-  function getPrefColourScheme() {
-    if (!window.matchMedia) return;
-
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
-  }
-
+  const { darkMode, setDarkMode } = useContext(ThemeContext);
   return (
-    <div className={darkMode ? 'dark-mode' : 'light-mode'}>
-      <nav>
-        <div className='toggle-container'>
-          <button onClick={() => setDarkMode((prevMode) => !prevMode)}>
-            Toggle
-          </button>
-        </div>
-      </nav>
-      <main>
-        <h1>{darkMode ? 'Dark Mode' : 'Light Mode'}</h1>
-        <h2>Push button to change theme</h2>
-      </main>
+    <div className='App'>
+      <div className={darkMode ? 'dark-mode' : 'light-mode'}>
+        <Header setDarkMode={setDarkMode} darkMode={darkMode} />
+        <main>
+          <h1>{darkMode ? 'Dark Theme' : 'Light Theme'}</h1>
+        </main>
+      </div>
     </div>
   );
 }
