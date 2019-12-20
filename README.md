@@ -7,4 +7,5 @@ Uses React / Context
 
 Refactored code from this video to use Context.
 Video not mine.
-![Video](https://youtu.be/FjDo1mbkNtw)
+
+<https://youtu.be/FjDo1mbkNtw>
