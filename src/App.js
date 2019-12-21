@@ -4,6 +4,8 @@ import { ThemeContext } from './contexts/ThemeContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+import './styles/App.css';
+
 function App() {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
   return (

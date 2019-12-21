@@ -1,8 +1,13 @@
+html,
 body {
   margin: 0;
   font-family: 'Vollkorn', Palatino, Times;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  width: 100%;
 }
 
 code {
@@ -16,7 +21,7 @@ code {
 }
 .dark-mode {
   background-color: #262335;
-  color: #999;
+  color: #ae945f;
   transition: background-color 0.5s ease-out;
 }
 .dark-mode nav {
@@ -28,17 +33,9 @@ code {
   transition: background-color 0.5s ease-out;
 }
 
-nav {
-  width: 100%;
-  display: flex;
-  background-color: #9c27b0;
-  transition: background-color 0.5s ease-out;
-  padding: 20px;
-}
-
 main {
   padding: 0 1rem;
-  margin: 2rem auto;
+  margin: 0 auto;
   max-width: 560px;
   height: 90vh;
 }
@@ -73,65 +70,23 @@ h2 {
   font-size: 4rem;
   line-height: 1.2;
 }
-
-.toggle {
-  position: relative;
-  padding: 0 4px;
-  display: flex;
-  align-items: center;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
 }
 
-input[type='checkbox'].checkbox {
-  width: 40px;
-  height: 10px;
-  background: #555;
-  position: relative;
-  border-radius: 5px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+a {
+  text-decoration: none;
+  color: inherit;
   cursor: pointer;
-  vertical-align: 2px;
-  outline: none;
-}
-
-input[type='checkbox'].checkbox:checked + label {
-  left: 30px;
-}
-
-input[type='checkbox'].checkbox:focus-visible {
-  outline: solid 2px white;
-}
-
-input[type='checkbox'].checkbox + label {
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  position: absolute;
-  left: 2px;
-  background: #fff;
-  opacity: 0.9;
-  background-color: cyan;
-}
-
-.toggle-container {
-  display: flex;
-  margin: 0 auto;
-}
-
-.toggle-container > span {
-  font-size: 1.2em;
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: color 0.3s ease;
-  margin-top: 4px;
-  margin-right: 2px;
-}
-
-.toggle-container > span:last-child {
-  margin-top: 5px;
 }
